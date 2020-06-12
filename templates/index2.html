@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Promotion Predictor</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    </head>
+
+    <body {background-image: url('business.jpg');
+  	 background-repeat: no-repeat;
+  	 background-attachment: fixed;
+  	 background-size: cover;
+}>
+
+        <!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Promotion Predictor</span></h2>
+            <div class='description'>
+    			<p>A Machine Learning Web App which can predict whether the employee should be promoted or not.</p>
+    		</div>
+    	</div>
+
+        <!-- Text Area -->
+    	<div class="ml-container">
+                
+    	<form action="{{ url_for('predict') }}" method="POST">
+        <label class="custom select" for="department"></label>
+	<select class="form-input" id="department" name="department" type="text" style="max-width:50%;"> 
+	<option value="0">Select Department</option>
+	<option value="7">Sales & Marketing</option> 
+	<option value="4">Operations</option> 
+	<option value="5">Procurement</option> 
+	<option value="8">Technology</option> 
+	<option value="0">Analytics</option> 
+	<option value="1">Finance</option> 
+	<option value="2">HR</option> 
+	<option value="3">Legal</option> 
+	<option value="6">R&D</option> 
+	</select> 
+	<br> 
+      <label class="custom select" for="education"></label> 
+	<select class="form-input" id="education" name="region" type="text" style="max-width:50%;"> 
+	<option value="1">Select Education</option>
+	<option value="0">Bachelor's</option> 
+	<option value="2">Master's & above</option> 
+	<option value="1">Below Secondary</option> 
+	</select> 
+	<br> 
+	<label class="custom select" for="gender"></label> 
+	<select class="form-input" id="gender" name="gender" type="text" style="max-width:50%;"> 
+	<option value="1">Select Gender</option>
+	<option value="0">Female</option> 
+	<option value="1">Male</option> 
+	</select> 
+	<br> 
+	<label class="custom-select" style="width:500px;" for="recruitment_channel"></label> 
+	<select class="form-input" id="recruitment_channel" name="recruitment_channel" type="text" style="max-width:50%;"> 
+	<option value="0">Recruitment Channel</option>
+	<option value="0">Other</option> 
+	<option value="2">Sourcing</option> 
+	<option value="1">Referral</option> 
+	</select> 
+	<br> 
+        <label for="no_of_trainings"></label> 
+	<input class="form-input" type="text" id="no_of_trainings" name="no_of_trainings" placeholder="Number of Training" style="max-width:50%;"> 
+	<br> 
+	<label for="age"></label> 
+	<input class="form-input" type="text" id="age" name="age" placeholder="Age- between 18-100" style="max-width:50%;"> 
+	<br> 
+        <label for="previous_year_rating"></label> 
+	<select class="form-input" id="previous_year_rating" name="previous_year_rating" type="text" style="max-width:50%;">  
+	<option value="1">Previous Year Rating</option>
+	<option value="1">1</option> 
+	<option value="2">2</option> 
+	<option value="3">3</option> 
+	<option value="4">4</option> 
+	<option value="5">5</option> 
+        </select> 
+	<br> 
+        
+	<label for="length_of_service"></label> 
+	<input class="form-input" type="text" id="length_of_service" name="length_of_service" type="text" placeholder="Length of Service (1-40)" style="max-width:50%;">
+	<br> 
+        <label for="KPIs_met"></label> 
+	<select class="form-input" id="KPIs_met" name="KPIs_met" type="text" style="max-width:50%;"> 
+ 	<option value="0">KPI Met?</option> 
+	<option value="0">No</option> 
+	<option value="1">Yes</option> 
+	</select> 
+	<br> 
+        <label for="awards_won"></label> 
+	<select class="form-input" id="awards_won" name="awards_won" type="text" style="max-width:50%;">
+	<option value="0">Awards Won?</option>   
+	<option value="0">No</option> 
+	<option value="1">Yes</option> 
+	</select> 
+	<br> 
+        <label for="avg_training_score"></label> 
+	<input class="form-input" type="text" id="avg_training_score" name="avg_training_score" placeholder="Training Score(1-100)" style="max-width:50%;">
+	<br> 
+        
+    	
+	<br>
+
+        		<input type="submit" class="my-cta-button" value="Predict">
+        	</form>
+    	</div>
+        <style>
+	body {
+ 	 background-image: url('static', filename='business.jpg');
+  	 background-repeat: no-repeat;
+  	 background-attachment: fixed;
+  	 background-size: cover;
+}
+</style>
+       
+    </body>
+</html>
